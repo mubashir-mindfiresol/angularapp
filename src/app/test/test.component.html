@@ -1,0 +1,30 @@
+<h2>
+    Welcome {{name}}
+</h2>
+<h2 class="text-success">
+    CodeVolution
+</h2>
+<input [(ngModel)]="name" mat-input type="text">
+{{name}}
+<br>
+
+<div *ngIf="displayName; then thenBlock ; else elseBlock"></div>
+<ng-template #thenBlock>
+<h2>If Block is dsplayed</h2>
+</ng-template>
+
+<ng-template #elseBlock>
+<h2>Else Block is dsplayed</h2>
+</ng-template>
+
+<br>
+
+
+<br>
+<div *ngFor="let color of colors; index as i">
+    <h2>{{i}}->{{color}}</h2>
+</div>
+
+<br>
+<h1>{{name}}</h1>
+<button mat-raised-button color="primary" (click)="fireEvent()">Send Event</button>
